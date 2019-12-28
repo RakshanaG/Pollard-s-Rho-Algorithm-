@@ -124,7 +124,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        //Question 4
         BigInteger p = (new BigInteger("2").pow(16)).subtract(new BigInteger("17"));
         BigInteger d=new BigInteger("154");
         BigInteger[] a=new BigInteger[2];   //A point on the elliptic curve
@@ -138,48 +137,6 @@ public class Main {
             avg_k+=k;
         }
         avg_k/=N;
-        System.out.println("Average Number of steps for 4: "+avg_k);
-        //Question 5a
-        p = (new BigInteger("2").pow(18)).subtract(new BigInteger("5"));
-        d=new BigInteger("294");
-        n=new BigInteger("65717");
-        a[0]=new BigInteger("5");
-        a[1]=new BigInteger("261901");
-        N=1000;     //Number of times the program must be iterated
-        avg_k=0;       //Average number of steps to find exponent m using Pollard's Rho algorithm
-        for (int i=0;i<N;i++) {
-            long k = check(a, d, p, n);     //Number of steps taken by the Pollard's Rho Algorithm to find m
-            avg_k+=k;
-        }
-        avg_k/=N;
-        System.out.println("Average Number of steps for 5a: "+avg_k);
-        //Question 5b
-        p = (new BigInteger("2").pow(20)).subtract(new BigInteger("5"));
-        d=new BigInteger("47");
-        n=new BigInteger("262643");
-        a[0]=new BigInteger("3");
-        a[1]=new BigInteger("111745");
-        N=1000;     //Number of times the program must be iterated
-        avg_k=0;       //Average number of steps to find exponent m using Pollard's Rho algorithm
-        for (int i=0;i<N;i++) {
-            long k = check(a, d, p, n);     //Number of steps taken by the Pollard's Rho Algorithm to find m
-            avg_k+=k;
-        }
-        avg_k/=N;
-        System.out.println("Average Number of steps for 5b: "+avg_k);
-        //Question 5c
-        p = (new BigInteger("2").pow(22)).subtract(new BigInteger("17"));
-        d=new BigInteger("314");
-        n=new BigInteger("1049497");
-        a[0]=new BigInteger("4");
-        a[1]=new BigInteger("85081");
-        N=1000;     //Number of times the program must be iterated
-        avg_k=0;       //Average number of steps to find exponent m using Pollard's Rho algorithm
-        for (int i=0;i<N;i++) {
-            long k = check(a, d, p, n);     //Number of steps taken by the Pollard's Rho Algorithm to find m
-            avg_k+=k;
-        }
-        avg_k/=N;
-        System.out.println("Average Number of steps for Question 5c: "+avg_k);
+        System.out.println("Average Number of steps: "+avg_k);
     }
 }
